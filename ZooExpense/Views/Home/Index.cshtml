@@ -1,0 +1,121 @@
+﻿@model ZooExpense.Models.ExpensesViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <b>Animal Type,Food required and Food Type</b>
+    <br />
+</div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Type</th>
+        <th>Rate</th>
+        <th>FoodType</th>
+        <th>SplitPercentage</th>
+    </tr>
+    @foreach (var d in @Model.animals)
+    {
+<tr>
+    <td>@d.Type</td>
+    <td>@d.Rate</td>
+    <td>@d.FoodType</td>
+    <td>@d.SplitPercentage</td>
+</tr>
+
+    }
+</table>
+<div>
+    <b>Price of the Material</b>
+    <br />
+</div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Material</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var d in @Model.prices)
+    {
+        <tr>
+            <td>@d.Key</td>
+            <td>@d.Value</td>
+        </tr>
+
+    }
+</table>
+    <div>
+        <b>Price Calculation for All the Animals in the Zoo</b>
+        <br />
+    </div>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>Animal Type</th>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Price</th>
+        </tr>
+        @foreach (var d in @Model.zoo.Giraffes.Giraffe)
+        {
+            <tr>
+                <td>Giraffe</td>
+                <td>@d.Name</td>
+                <td>@d.Kg</td>
+                <td>@d.Price</td>
+            </tr>
+
+        }
+        @foreach (var d in @Model.zoo.Lions.Lion)
+        {
+    <tr>
+        <td>Lion</td>
+        <td>@d.Name</td>
+        <td>@d.Kg</td>
+        <td>@d.Price</td>
+    </tr>
+
+        }
+        @foreach (var d in @Model.zoo.Piranhas.Piranha)
+        {
+    <tr>
+        <td>Piranha</td>
+        <td>@d.Name</td>
+        <td>@d.Kg</td>
+        <td>@d.Price</td>
+    </tr>
+
+        }
+        @foreach (var d in @Model.zoo.Tigers.Tiger)
+        {
+    <tr>
+        <td>Tiger</td>
+        <td>@d.Name</td>
+        <td>@d.Kg</td>
+        <td>@d.Price</td>
+    </tr>
+
+        }
+        @foreach (var d in @Model.zoo.Wolves.Wolf)
+        {
+    <tr>
+        <td>Wolf</td>
+        <td>@d.Name</td>
+        <td>@d.Kg</td>
+        <td>@d.Price</td>
+    </tr>
+
+        }
+        @foreach (var d in @Model.zoo.Zebras.Zebra)
+        {
+    <tr>
+        <td>Zebra</td>
+        <td>@d.Name</td>
+        <td>@d.Kg</td>
+        <td>@d.Price</td>
+    </tr>
+
+        }
+    </table>
+    <div>
+        <b>Total Price - @Model.price</b>
+        <br />
+    </div>
